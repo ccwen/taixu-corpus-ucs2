@@ -22,9 +22,10 @@ autostart:true,textOnly:true}; //set textOnly not to build inverted
 const {文,頁,maxArticle}=require("./format");
 const toc=require("./toc");
 const div=require("./div");
+const note=require("./note");
 
-const openhandlers=Object.assign({文,頁},div,toc);
-const closehandlers=Object.assign({文},div,toc);
+const openhandlers=Object.assign({文,頁},div,toc,note);
+const closehandlers=Object.assign({文},div,toc,note);
 
 var corpus=createCorpus(options);
 corpus.setHandlers(
